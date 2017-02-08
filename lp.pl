@@ -1,6 +1,8 @@
-sum-up-numbers-simple(L, N) :-        /* define function */
+sum-up-numbers-simple(L, N) :-        /* define sum simple function */
   sum-up-list(L, Value),              /* recursive call */
   Value is N.                         /* check if value is equal to N */
+
+sum-up-numbers-general(L, N) :-       /* define sum general function */
 
 sum-up-list([], 0).                   /* declare helper function */
 sum-up-list([First|Last], Value) :-
