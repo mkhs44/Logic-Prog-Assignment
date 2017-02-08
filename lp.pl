@@ -33,4 +33,5 @@ sum-up-list-gen([First|Last], Value) :-
   /* Question 4 */
 common-unique-elements([],_,[]).                                  /* take two list as parameters, checks if they are the same */
 common-unique-elements([First|Last], ListTwo, [First|Value]) :-   /* declare function */
-  member(ListTwo, First),
+  member(ListTwo, First),                                         /* check if value is a member of list */
+  common-unique-elements(Last, ListTwo, Value).                   /* recurse with new list */
