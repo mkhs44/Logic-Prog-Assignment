@@ -20,3 +20,6 @@ sum-up-numbers-general(L, N) :-         /* define sum general function */
 sum-up-list-gen([], 0).                 /* if list is empty, return 0 */
 sum-up-list-gen([[]], 0).               /* if nested list is empty, return 0 */
 sum-up-list-gen([First|Last], Value) :- /* declare helper function */
+  number(First),                        /* check if value is a number */
+  sum-up-list-gen(Last, SumLast),       /* pass in next value and recurse */
+  Value is First + SumLast.             /* add values */
