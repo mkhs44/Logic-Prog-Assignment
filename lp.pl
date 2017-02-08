@@ -14,8 +14,8 @@ sum-up-list([First|Last], Value) :-
 
 /* Question 2 */
 sum-up-numbers-general(L, N) :-         /* define sum general function */
-  sum-up-list-gen(L, Value),            /* recursive call */
-  Value is N.                           /* check if value is equal to N */
+  [First|Last] = L,                     /* assign new list */
+  sum-up-list-gen(L, Value).            /* recursive call */
 
 sum-up-list-gen([], 0).                 /* if list is empty, return 0 */
 sum-up-list-gen([[]], 0).               /* if nested list is empty, return 0 */
