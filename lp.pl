@@ -36,3 +36,4 @@ common-unique-elements([First|Last], ListTwo, [First|Value]) :-   /* declare fun
   member(ListTwo, First),                                         /* check if value is a member of list */
   common-unique-elements(Last, ListTwo, Value).                   /* recurse with new list */
 common-unique-elements([_|Last], ListTwo, Value) :-               /* declare func parameters for second list check */
+  common-unique-elements(Last, ListTwo, Value).                   /* recurse with new list */
