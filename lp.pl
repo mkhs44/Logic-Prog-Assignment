@@ -30,5 +30,7 @@ sum-up-list-gen([First|Last], Value) :-
   sum-up-list-gen(Last, SumLast),       /* pass in next value and recurse */
   Value is First + SumLast.             /* add nested values */
 
-/* Question 4 */
-common-unique-elements([],_,[]).        /* take two list as parameters, checks if they are the same */
+  /* Question 4 */
+common-unique-elements([],_,[]).                                  /* take two list as parameters, checks if they are the same */
+common-unique-elements([First|Last], ListTwo, [First|Value]) :-   /* declare function */
+  member(ListTwo, First),
