@@ -23,3 +23,6 @@ sum-up-list-gen([First|Last], Value) :- /* declare helper function */
   number(First),                        /* check if value is a number */
   sum-up-list-gen(Last, SumLast),       /* pass in next value and recurse */
   Value is First + SumLast.             /* add values */
+sum-up-list-gen([First|Last], Value) :-
+  atom(First),                          /* check if value is a list */
+  sum-up-list-gen(Last, Value).         /* if value is a list, recurse */
